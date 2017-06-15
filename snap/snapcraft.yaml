@@ -1,0 +1,20 @@
+name: pocketplace
+version: master
+summary: Draw pixels on a canvas with friends.
+description: |
+  Draw pixels on a canvas with friends.
+
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: strict
+
+apps:
+  pocketplace:
+    command: pocketplace
+    plugs: [network, network-bind]
+
+parts:
+  pocketplace:
+    source: .
+    plugin: go
+    go-importpath: github.com/olahol/pocketplace
